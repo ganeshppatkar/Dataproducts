@@ -1,0 +1,28 @@
+---
+title: "R Markdown Leaflet assignment"
+author: "Ganesh Prabhupatkar"
+date: "June 9, 2018"
+output: html_document
+---
+## Assignment
+Create a web page using R Markdown that features a map created with Leaflet. 
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity! 
+
+## The map will display the Taj Mahal location
+
+```{r assignment}
+library(leaflet)
+```
+
+##My Map from specific location
+```{r mymap}
+
+## Get co-ordinates of specific location
+my_map <- data.frame(lat=27.1750,lng=78.0422)
+my_map <- my_map %>% leaflet() %>% addTiles() %>% addMarkers(popup = "Taj Mahal")
+my_map
+```
+
